@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="script.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+<h3 style="text-align: center;">Tabla de Calorias</h3>
+<form action="recibido2.html">
+    <div class="container">
+        <div class="card">
+            <div class="m-5">
+                <table class="table table-striped">
+                    <tr class="table-h">
+                        <th>Alimento</th>
+                        <th>Calorias<br>(kCal)</th>
+                        <th>Grasas<br>(g)</th>
+                        <th>Proteina<br>(g)</th>
+                        <th>Carbohidratos<br>(g)</th>
+                        <th>ok</th>
+                        <th>opciones</th>
+                    </tr>
+        
+                    <tr id="1" class="filas">
+                        <td>Arandano</td>
+                        <td>49</td>
+                        <td>0.2</td>
+                        <td>0.4</td>
+                        <td>12.7</td>
+                        <td><img width="30px" src="bien.jpeg"></td>
+                        <td><button type="button" class="editar" onclick="editar(1)">Editar</button></td>
+                    </tr>
+                    <tr id="2" class="filas">
+                        <td>platano</td>
+                        <td>90</td>
+                        <td>0.3</td>
+                        <td>1.0</td>
+                        <td>23.5</td>
+                        <td><img width="30px" src="mal.jpeg"></td>
+                        <td><button type="button" class="editar" onclick="editar(2)">Editar</button></td>
+                    </tr>
+                    <tr id="3" class="filas">
+                        <td>Cereza</td>
+                        <td>46</td>
+                        <td>0.4</td>
+                        <td>0.9</td>
+                        <td>10.9</td>
+                        <td><img width="30px" src="mal.jpeg"></td>
+                        <td><button type="button" class="editar" onclick="editar(3)">Editar</button></td>
+                    </tr>
+                    <tr id="4" class="filas">
+                        <td>Fresa</td>
+                        <td>37</td>
+                        <td>0.5</td>
+                        <td>0.8</td>
+                        <td>8.3</td>
+                        <td><img width="30px" src="bien.jpeg"></td>
+                        <td><button type="button" class="editar" onclick="editar(4)">Editar</button></td>
+                    </tr>
+                </table>
+                Contenido nutricional por cada 100 g de alimento.
+                <br>
+                <br>
+                <div id="bottom" style="display: none;">
+                    Pulse Aceptar para guardar los cambios o cancelar para anularlos
+                    <br>
+                    <button type="submit" class="btn btn-outline-primary">Aceptar</button>
+                    <button type="button" class="btn btn-outline-dark" onclick="cancelar()">Cancelar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+<div class="noti">
+    Solo se puede editar una línea. Recargue la página para poder editar otra
+    <button id="cl"type="button" class="btn btn-secondary" onclick="$('.noti').css('display','none')">OK</button>
+</div>
+</body>
+</html>

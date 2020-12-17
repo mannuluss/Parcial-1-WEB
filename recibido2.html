@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <title>retre</title>
+</head>
+<body>
+<div class="container-sm" style="width: 22%;">
+    <div class="container-sm py-5">
+        <h2 style="text-align: center;">Resultado</h2>
+        <div class="card text-white">
+            <div class="card-header bg-info">
+                <div class="row">
+                    <div class="col">
+                        <img id="img" src="bien.jpeg" width="80px">
+                    </div>
+                    <div class="col">
+                        <h2 id="alimento">alimento</h2>
+                        <h4>alimento</h4>
+                    </div>
+                </div>
+            </div>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item bg-light">
+                    <div class="row">
+                        <div class="col text-info">Calorias (KCal)</div>
+                        <div class="col-md-2">
+                            <label class="bg-primary" style="border-radius: 2px;" id="cal"> 49 </label>
+                        </div>
+                    </div>
+                </li>
+                <li class="list-group-item bg-light">
+                    <div class="row">
+                        <div class="col text-info">Grasas (g)</div>
+                        <div class="col-md-2">
+                            <label class="bg-info" style="border-radius: 2px;" id="gra">0.4</label> 
+                        </div>
+                    </div>
+                </li>
+                <li class="list-group-item bg-light">
+                    <div class="row">
+                        <div class="col text-info">Proteina (g)</div>
+                        <div class="col-md-2">
+                           <label class="bg-success" style="border-radius: 2px;" id="pro">0.4</label> 
+                        </div>
+                    </div>
+                </li>
+                <li class="list-group-item bg-light">
+                    <div class="row">
+                        <div class="col text-info">Carbohidratos (g)</div>
+                        <div class="col-md-2">
+                           <label class="bg-danger" style="border-radius: 2px;" id="car">0.4</label> 
+                        </div>
+                    </div>
+                </li>
+            </ul>
+
+        </div>            
+    </div>
+</div>
+</body>
+</html>
+
+<script>
+    console.log(getParameterByName('alimento'));
+    var alimento= getParameterByName('alimento');
+    var calorias = getParameterByName('calorias');
+    var grasas = getParameterByName('grasas');
+    var proteina = getParameterByName('proteina');
+    var carbo = getParameterByName('carbohidratos');
+    var img = getParameterByName('image');
+
+    $('#alimento').html(alimento);
+    $('#cal').html(calorias);
+    $('#gra').html(grasas);
+    $('#pro').html(proteina);
+    $('#car').html(carbo);
+    if (img == 'ok'){
+        $('#img').attr('src','bien.jpeg');
+    }else{
+        $('#img').attr('src','mal.jpeg');
+    }
+    
+    function getParameterByName(name) {
+        name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+        var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+        results = regex.exec(location.search);
+        return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+    }
+</script>
